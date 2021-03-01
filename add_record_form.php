@@ -27,7 +27,11 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name">
+            <input type="input" name="name" placeholder="add first name" required>
+            <br>
+
+            <label>Age:</label>
+            <input type="input" name="age">
             <br>
 
             <label>List Price:</label>
