@@ -1,0 +1,23 @@
+/* here is where the header styles start*/
+
+header {
+    margin: 0;
+    border-bottom: 2px solid $Green;
+    h1 {
+        margin: 0;
+        padding: .5em 0;
+        color:$Green;
+    }
+}
+ 
+nav {
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        li {
+            padding-bottom: 0.5em;
+        }
+    }
+    
+}

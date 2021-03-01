@@ -42,7 +42,7 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1>Record List</h1>
+<h1>Toys</h1>
 
 <aside>
 <!-- display a list of categories -->
@@ -66,6 +66,7 @@ include('includes/header.php');
 <tr>
 <th>Image</th>
 <th>Name</th>
+<th>Age</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -74,6 +75,7 @@ include('includes/header.php');
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
+<td><?php echo $record['age']; ?></td>
 <td class="right"><?php echo $record['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
