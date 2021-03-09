@@ -31,11 +31,12 @@ include('includes/header.php');
             <br>
 
             <label>Age:</label>
-            <input type="input" name="age">
+            <input type="input" name="age"  placeholder="Enter Age Range" required>
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price">
+            
+            <input type="input" name="price" id="priceid"  placeholder="Enter Price" required size="12" onBlur="price_validation();"/><span id="price_err"></span>
             <br>        
             
             <label>Image:</label>
@@ -46,7 +47,9 @@ include('includes/header.php');
             <input type="submit" value="Add Record">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+        <p><a href="admin.php">Back</a></p>
+        
     <?php
 include('includes/footer.php');
 ?>
+<script src="validation.js"></script>

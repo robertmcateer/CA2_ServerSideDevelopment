@@ -2,19 +2,24 @@
 
 header {
     margin: 0;
-    border-bottom: 2px solid $Green;
+    padding: 0;
+    border-bottom: 2px solid $blue;
+    background-color:$blue;
+    
+
+    
     h1 {
         margin: 0;
         padding: .5em 0;
-        color:$Green;
+        color:$title;
     }
 }
  
 nav {
     ul {
         list-style-type: none;
-        margin-left: 0;
-        padding-left: 0;
+        margin: 0;
+        padding: 0;
         li {
             padding-bottom: 0.5em;
         }

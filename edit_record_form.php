@@ -34,8 +34,9 @@ include('includes/header.php');
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price"
-                   value="<?php echo $records['price']; ?>">
+            <input type="input" name="price" id="priceid" required size="12" onBlur="price_validation();"
+                   value="<?php echo $records['price']; ?>"/><span id="price_err"></span>
+                   <!-- <input type="input" name="price" id="priceid"  placeholder="Enter Price" required size="12" onBlur="price_validation();"/><span id="price_err"></span> -->
             <br>
 
             <label>Image:</label>
@@ -53,3 +54,4 @@ include('includes/header.php');
     <?php
 include('includes/footer.php');
 ?>
+<script src="validation.js"></script>

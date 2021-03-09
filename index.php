@@ -42,11 +42,11 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1>Toys</h1>
 
+<button"><a href="admin.php">Admin</a></button> 
 <aside>
 <!-- display a list of categories -->
-<h2>Categories</h2>
+<h2 id="categories">Categories</h2>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
@@ -56,20 +56,18 @@ include('includes/header.php');
 </li>
 <?php endforeach; ?>
 </ul>
-</nav>          
+</nav>       
 </aside>
 
 <section>
 <!-- display a table of records -->
-<h2><?php echo $category_name; ?></h2>
+<h3><?php echo $category_name; ?></h3>
 <table>
 <tr>
 <th>Image</th>
 <th>Name</th>
 <th>Age</th>
 <th>Price</th>
-<th>Delete</th>
-<th>Edit</th>
 </tr>
 <?php foreach ($records as $record) : ?>
 <tr>
@@ -77,27 +75,9 @@ include('includes/header.php');
 <td><?php echo $record['name']; ?></td>
 <td><?php echo $record['age']; ?></td>
 <td class="right"><?php echo $record['price']; ?></td>
-<td><form action="delete_record.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Delete">
-</form></td>
-<td><form action="edit_record_form.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Edit">
-</form></td>
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
 </section>
 <?php
 include('includes/footer.php');

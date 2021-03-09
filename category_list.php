@@ -41,11 +41,11 @@ include('includes/header.php');
           id="add_category_form">
 
         <label>Name:</label>
-        <input type="input" name="name">
-        <input id="add_category_button" type="submit" value="Add">
+        <input type="input" name="name" required>
+        <input id="add_category_button" type="submit" value="Add" >
     </form>
     <br>
-    <p><a href="index.php">Homepage</a></p>
+    <p><a href="admin.php">Back</a></p>
 
     <?php
 include('includes/footer.php');
