@@ -29,7 +29,7 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name" placeholder="add first name" required>
+            <input type="input" name="name"  id="nameid" placeholder="add first name" required size="12" onBlur="name_validation();" required><span id="name_err"></span>
             <br>
 
             <label>Age:</label>

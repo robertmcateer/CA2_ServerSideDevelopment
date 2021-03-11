@@ -33,10 +33,35 @@ function price_validation(){
         }
         else
         {
-        document.getElementById('man_err').innerHTML = 'Valid Number';
+        document.getElementById('man_err').innerHTML = 'Valid';
         document.getElementById('man_err').style.color = "#00AF33";
         }
         }
+
+
+        // name validation
+    function name_validation(){
+        'use strict';
+        var nameid_name = document.getElementById("nameid");
+        var nameid_value = document.getElementById("nameid").value;
+        var nameid_length = nameid_value.length;
+        var letters = /^[a-zA-Z]+/g;
+        if(!nameid_value.match(letters))
+        {
+        document.getElementById('name_err').innerHTML = 'Must be all letters';
+        document.getElementById('name_err').style.color = "#FF0000";
+        passid_name.focus();
+        
+        }
+        else
+        {
+        document.getElementById('name_err').innerHTML = 'Valid';
+        document.getElementById('name_err').style.color = "#00AF33";
+        }
+        }
+
+
+
 
         
     // function search_validation(){

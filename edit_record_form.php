@@ -31,8 +31,8 @@ include('includes/header.php');
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name"
-                   value="<?php echo $records['name']; ?>">
+            <input type="input" name="name" id="nameid" required size="12" onBlur="name_validation();"
+                   value="<?php echo $records['age']; ?>"><span id="name_err"></span>
             <br>
 
             <label>Age:</label>
