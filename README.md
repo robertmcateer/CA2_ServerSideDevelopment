@@ -3,6 +3,7 @@ This repo hosts my toy shop themed CRUD application. The application was built u
 
 Please download and run this application as you wish. Any enquiries reguarding bugs or questions you can contact me on
 : @D00233414@student.dkit.ie
+---
 ### Instructions
 * Create a MySQL database called ca2_serversidedevelopment in PHP MyAdmin (code to build will be below)
 * Download the repo and save into an C:/xampp/htdoc on your local machine. 
@@ -10,7 +11,7 @@ Please download and run this application as you wish. Any enquiries reguarding b
 * *You will need to download apache server onto your local machine to run this application through xampp*
 * Once saved. Open the file in your code editor. Ensure the application can connect to your database. DB connection code found in database.php file.
 * *The code editor I have used it Visial Studios 2019. This can be downloaded at [https://code.visualstudio.com/download]*
-
+---
 ### Code to create database
 
 CREATE TABLE `categories` (
@@ -18,14 +19,12 @@ CREATE TABLE `categories` (
   `categoryName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
+INSERT INTO `categories` (`categoryID`, `categoryName`)
+ VALUES
 (1, 'Action Figures'),
 (2, 'Dolls'),
 (3, 'Animals'),
 (4, 'Console Games');
-
--- --------------------------------------------------------
 
 CREATE TABLE `records` (
   `recordID` int(11) NOT NULL,
@@ -37,7 +36,8 @@ CREATE TABLE `records` (
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `records` (`recordID`, `categoryID`, `name`, `age`, `manufacturerNumber`, `price`, `image`) VALUES
+INSERT INTO `records` (`recordID`, `categoryID`, `name`, `age`, `manufacturerNumber`, `price`, `image`) 
+VALUES
 (4, 1, 'Wonder Woman', '10-15', 'PS19', '10.00', '758256.jpg'),
 (5, 2, 'Fashion Doll', '3-8', 'LW00', '16.00', '250067.jpg'),
 (6, 2, 'Baby Doll', '5-10', 'UY66', '19.00', '819662.jpg'),
@@ -54,19 +54,4 @@ INSERT INTO `records` (`recordID`, `categoryID`, `name`, `age`, `manufacturerNum
 (19, 1, 'Batman', '18+', 'KI88', '23.00', '592544.jpg'),
 (22, 4, 'Apex', '18+', 'GG88', '20.00', '689501.jpg');
 
-
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`categoryID`);
-
-ALTER TABLE `records`
-  ADD PRIMARY KEY (`recordID`);
-
-ALTER TABLE `categories`
-  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
-ALTER TABLE `records`
-  MODIFY `recordID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-COMMIT;
-
-
-### 
+---
