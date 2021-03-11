@@ -1,3 +1,5 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap" rel="stylesheet">
 <?php
 require_once('database.php');
 
@@ -46,9 +48,10 @@ $statement3->closeCursor();
 include('includes/header.php');
 ?>
 <div class="admnbutton">
+<button type="button" onclick="document.location='search.php'">Search Toys</button>  
 <button type="button" onclick="document.location='admin.php'">Admin</button>  
 </div>
-<aside>
+<aside id="indexaside">
 <!-- display a list of categories -->
 <h2 id="categories">Categories</h2>
 <nav>
@@ -60,12 +63,9 @@ include('includes/header.php');
 </li>
 <?php endforeach; ?>
 <li>
-
 </li>
 </ul>
 </nav>   
-<div class ="adminlinks">
-<button type="button" onclick="document.location='search.php'">Search Toys</button>  
 </aside>
 
 <section>

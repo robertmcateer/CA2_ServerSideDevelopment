@@ -3,8 +3,13 @@
 aside {
     margin-top: 100px;
     float: left;
-    width: 150px;
+    width: 153px;
     h2{
         color: red;
     }
+}
+
+#indexaside{
+    @extend aside;
+    padding-top: 110px;;
 }
