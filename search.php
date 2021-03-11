@@ -1,19 +1,16 @@
 <div class="container">
-
-
-
 <?php
 include('includes/header.php');
 require_once('database.php');
 ?>
 <form method="post">
 <label>Search</label>
-<input type="text" name="search">
+<input type="text" name="search"  id="searchid"  placeholder="Search Toy" required size="12" onBlur="search_validation();">
 <input type="submit" name="submit">	
 </form>
 
 <?php
-
+// search 
 if (isset($_POST["submit"])) {
 	$str = $_POST["search"];
 	$sth = $db->prepare("SELECT * FROM `records` WHERE Name = '$str'");
@@ -25,7 +22,7 @@ if (isset($_POST["submit"])) {
 	{
     
 ?>
-<table>
+<table class="searchtable">
 <tr>
 <th>Image</th>
 <th>Name</th>
@@ -40,21 +37,24 @@ if (isset($_POST["submit"])) {
 <td><?php echo $row->manufacturerNumber; ?></td>
 <td class="right"><?php echo $row->price; ?></td>
 </table>
+
 <?php
     }
+	else
+	{
+		?>
+		<div class="searcherror">
+		<?php
+		echo "Item not found, Try again";
+	}
 }
 ?>
+
+
 <p><a href="index.php">Back</a></p>
 <?php
 include('includes/footer.php');
-?></div>
+?>
+</div>
 
-
-
-<?php
-
-/// search
-
-
-
-
+<script src="validation.js"></script>

@@ -37,4 +37,21 @@ function price_validation(){
         document.getElementById('man_err').style.color = "#00AF33";
         }
         }
+
+        
+    // function search_validation(){
+    //     'use strict';
+    //     var searchid_name = document.getElementById("searchid");
+    //     var searchid_value = document.getElementById("searchid").value;
+    //     var searchid_length = searchid_value.length;
+    //     if(searchid_name != searchid_value)
+    //     {
+           
+    //     document.getElementById('search_err').innerHTML = 'Must be in formatt LL66 & length 4';
+    //     document.getElementById('search_err').style.color = "#FF0000";
+    //     searchid_name.focus();
+        
+    //     }
+       
+    //     }
     

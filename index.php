@@ -39,18 +39,15 @@ $records = $statement3->fetchAll();
 $statement3->closeCursor();
 
 
-/// search
-
-
 ?>
 
 <div class="container">
 <?php
 include('includes/header.php');
 ?>
-
-
-<button"><a href="admin.php">Admin</a></button> 
+<div class="admnbutton">
+<button type="button" onclick="document.location='admin.php'">Admin</button>  
+</div>
 <aside>
 <!-- display a list of categories -->
 <h2 id="categories">Categories</h2>
@@ -68,7 +65,7 @@ include('includes/header.php');
 </ul>
 </nav>   
 <div class ="adminlinks">
-<p><a href="search.php">Search Toys</a></p>    
+<button type="button" onclick="document.location='search.php'">Search Toys</button>  
 </aside>
 
 <section>

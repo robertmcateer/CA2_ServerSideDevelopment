@@ -83,6 +83,12 @@ table {
     margin-top: 25px;
 }
 
+.searchtable{
+    @extend table;
+   margin: 150x;;
+    
+}
+
 
 form {
     margin: 0;
@@ -132,10 +138,28 @@ h3{
     @extend aside;
     a{
         color: red;
+        
 
     }
     a:hover {
         color: $bigtitle;
     }
     
+}
+
+.searcherror{
+    padding-top: 10px;
+    margin-top: 10px;
+    color: red;
+    
+}
+
+#searchid{
+    margin-top: 50px;
+   
+}
+
+.admnbutton{
+    margin: 15px;;
+    float: right;
 }
