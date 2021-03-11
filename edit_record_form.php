@@ -33,6 +33,17 @@ include('includes/header.php');
                    value="<?php echo $records['name']; ?>">
             <br>
 
+            <label>Age:</label>
+            <input type="input" name="age"
+                   value="<?php echo $records['age']; ?>">
+            <br>
+
+            <label>Manufacturer:</label>
+            <input type="input" name="manufacturerNumber" id="manid"  required size="12" onBlur="man_validation();"
+                   value="<?php echo $records['manufacturerNumber']; ?>"><span id="man_err"></span>
+                   
+            <br>
+
             <label>List Price:</label>
             <input type="input" name="price" id="priceid" required size="12" onBlur="price_validation();"
                    value="<?php echo $records['price']; ?>"/><span id="price_err"></span>
@@ -50,7 +61,7 @@ include('includes/header.php');
             <input type="submit" value="Save Changes">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+        <p><a href="admin.php">Back</a></p>
     <?php
 include('includes/footer.php');
 ?>

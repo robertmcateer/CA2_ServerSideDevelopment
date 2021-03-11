@@ -67,6 +67,7 @@ include('includes/header.php');
 <th>Image</th>
 <th>Name</th>
 <th>Age</th>
+<th>Manufacturer Number</th>
 <th>Price</th>
 </tr>
 <?php foreach ($records as $record) : ?>
@@ -74,6 +75,7 @@ include('includes/header.php');
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
 <td><?php echo $record['age']; ?></td>
+<td><?php echo $record['manufacturerNumber']; ?></td>
 <td class="right"><?php echo $record['price']; ?></td>
 </tr>
 <?php endforeach; ?>

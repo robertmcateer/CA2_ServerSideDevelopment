@@ -14,7 +14,17 @@
 <?php
 include('includes/header.php');
 ?>
-    <h1>Category List</h1>
+    <h1>Categories Manager</h1>
+
+    <h2>Add Category</h2>
+    <form action="add_category.php" method="post"
+          id="add_category_form">
+
+        <label>Name:</label>
+        <input type="input" name="name" required>
+        <input id="add_category_button" type="submit" value="Add" >
+    </form>
+
     <table>
         <tr>
             <th>Name</th>
@@ -35,15 +45,6 @@ include('includes/header.php');
         <?php endforeach; ?>
     </table>
     <br>
-
-    <h2>Add Category</h2>
-    <form action="add_category.php" method="post"
-          id="add_category_form">
-
-        <label>Name:</label>
-        <input type="input" name="name" required>
-        <input id="add_category_button" type="submit" value="Add" >
-    </form>
     <br>
     <p><a href="admin.php">Back</a></p>
 

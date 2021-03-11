@@ -51,27 +51,29 @@ include('includes/header.php');
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+<li><a href="admin.php.?category_id=<?php echo $category['categoryID']; ?>">
 <?php echo $category['categoryName']; ?>
 </a>
 </li>
 <?php endforeach; ?>
 <li>
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
-<p><a href="index.php">Back</a></p>
 </li>
 </ul>
-</nav>       
+</nav>  
+<div class ="adminlinks">
+<p><a href="add_record_form.php">Add Record</a></p>
+<p><a href="category_list.php">Manage Categories</a></p>    
+</div> 
 </aside>
 <section>
 <!-- display a table of records -->
 <h3><?php echo $category_name; ?></h3>
-<table>
+<table id="admintable">
 <tr>
 <th>Image</th>
 <th>Name</th>
 <th>Age</th>
+<th>Manufacturer No</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -81,6 +83,7 @@ include('includes/header.php');
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
 <td><?php echo $record['age']; ?></td>
+<td><?php echo $record['manufacturerNumber']; ?></td>
 <td class="right"><?php echo $record['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
@@ -101,8 +104,11 @@ value="<?php echo $record['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
+<p><a href="index.php">Back</a></p>
 </section>
 <?php
 include('includes/footer.php');
 ?>
+
 </div>
+

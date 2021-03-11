@@ -4,11 +4,12 @@
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 $age = filter_input(INPUT_POST, 'age');
+$manufacturerNumber = filter_input(INPUT_POST, 'manufacturerNumber');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
 // Validate inputs
 if ($category_id == null || $category_id == false ||
-    $name == null  || $age == null || $price == null || $price == false ) {
+    $name == null  || $age == null || $manufacturerNumber == null || $price == null || $price == false ) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -64,18 +65,19 @@ if ($category_id == null || $category_id == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO records
-                 (categoryID, name, age, price, image)
+                 (categoryID, name, age, manufacturerNumber, price, image)
               VALUES
-                 (:category_id, :name, :age, :price, :image)";
+                 (:category_id, :name, :age, :manufacturerNumber, :price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':age', $age);
+    $statement->bindValue(':manufacturerNumber', $manufacturerNumber);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();
 
     // Display the Product List page
-    include('index.php');
+    include('admin.php');
 }
