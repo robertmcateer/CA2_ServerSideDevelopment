@@ -37,11 +37,18 @@ $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
+
+
+/// search
+
+
 ?>
+
 <div class="container">
 <?php
 include('includes/header.php');
 ?>
+
 
 <button"><a href="admin.php">Admin</a></button> 
 <aside>
@@ -55,8 +62,13 @@ include('includes/header.php');
 </a>
 </li>
 <?php endforeach; ?>
+<li>
+
+</li>
 </ul>
-</nav>       
+</nav>   
+<div class ="adminlinks">
+<p><a href="search.php">Search Toys</a></p>    
 </aside>
 
 <section>

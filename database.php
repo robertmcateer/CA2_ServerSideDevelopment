@@ -1,4 +1,6 @@
 <?php
+
+
     $dsn = 'mysql:host=localhost;dbname=ca2_serversidedevelopment';
     $username = 'root';
     $password = '';
