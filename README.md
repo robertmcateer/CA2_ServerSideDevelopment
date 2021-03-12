@@ -1,7 +1,7 @@
 # CRUD application using PHP and SQL
  This repo hosts my toy shop themed CRUD application. The application was built using HTML, SCSS, PHP and MYSQL. The website itself allows users to browse and search the online shop for toys across various categories. It also enables an admin user to add, edit and delete item records or categores as they wish. Please download and run this application as you wish. Any enquiries reguarding bugs or questions you can contact me on: @D00233414@student.dkit.ie
 
- The application can be found at [https://mysql04.comp.dkit.ie/D00233414/CA2_serversidedevelopment/index.php]
+ ### The application can be found at [https://mysql04.comp.dkit.ie/D00233414/CA2_serversidedevelopment/index.php]
 ---
 ### Instructions
 * Create a MySQL database called ca2_serversidedevelopment in PHP MyAdmin (code to build will be below)
