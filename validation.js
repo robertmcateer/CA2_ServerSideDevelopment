@@ -59,10 +59,6 @@ function price_validation(){
         document.getElementById('name_err').style.color = "#00AF33";
         }
         }
-
-
-
-
         
     // function search_validation(){
     //     'use strict';
