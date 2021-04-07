@@ -1,53 +1,91 @@
-<div class="container">
 <?php
-include('includes/header.php');
 
-$connect = mysqli_connect("localhost", "root", "", "ca2_serversidedevelopment");
+//login.php
+
+/**
+ * Start the session.
+ */
 session_start();
-if(isset($_POST["login"]))
-{
-    if(empty($_POST["username"] || empty($_POST["password"])))
-    {
-        
-        echo '<script> alert("Both fields are required")</script>';
-    }else
-    {
-        $username=mysql_real_string($connect, $_POST["username"]);
-        $password=mysql_real_string($connect, $_POST["password"]);
 
+
+/**
+ * Include ircmaxell's password_compat library.
+ */
+require 'libary-folder/password.php';
+
+/**
+ * Include our MySQL connection.
+ */
+require 'login_connect.php';
+
+
+//If the POST var "login" exists (our submit button), then we can
+//assume that the user has submitted the login form.
+if(isset($_POST['login'])){
+    
+    //Retrieve the field values from our login form.
+    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+    $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    
+    //Retrieve the user account information for the given username.
+    $sql = "SELECT id, username, password FROM users WHERE username = :username";
+    $stmt = $pdo->prepare($sql);
+    
+    //Bind value.
+    $stmt->bindValue(':username', $username);
+    
+    //Execute.
+    $stmt->execute();
+    
+    //Fetch row.
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    //If $row is FALSE.
+    if($user === false){
+        //Could not find a user with that username!
+        //PS: You might want to handle this error in a more user-friendly manner!
+        die('Incorrect username / password combination!');
+    } else{
+        //User account found. Check to see if the given password matches the
+        //password hash that we stored in our users table.
         
+        //Compare the passwords.
+        $validPassword = password_verify($passwordAttempt, $user['password']);
         
-        $query="select * from tbl_admin where username='$username' and password='$password'";
-        $result=mysql_query($connect,$query);
-        if (mysql_num_rows($result)>0){
-            $_SESSION["username"]=$username;
-            header("location:admin.php");
+        //If $validPassword is TRUE, the login has been successful.
+        if($validPassword){
+            
+            //Provide the user with a login session.
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['logged_in'] = time();
+            
+            //Redirect to our protected page, which we called home.php
+            header('Location: index.php');
+            exit;
+            
+        } else{
+            //$validPassword was FALSE. Passwords do not match.
+            die('Incorrect username / password combination!');
         }
-        else{
-            echo '<script> alert("Wrong Credentials")</script>';
-        }
-        
     }
+    
 }
+ 
 ?>
-<h1>Sign In</h1>
-
-<br>
-<form method="post">
-<label>Username:</label>
- <input id="username" type="input" name="username" placeholder="Password" required>
- <br>
- <br>
-
-<label>Password:</label>
-<input id="password" type="input" name="password"  placeholder="Username" required>
- <br>
- <input type="submit" name="login" value="Login"  href="add_record_form.php">
- <p><a href="index.php">Back</a></p>
- </form>
-
-
-<?php
-include('includes/footer.php');
-?>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form action="login.php" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password"><br>
+            <input type="submit" name="login" value="Login">
+        </form>
+    </body>
+</html>
