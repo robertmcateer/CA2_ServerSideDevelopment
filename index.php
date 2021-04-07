@@ -47,10 +47,7 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<div class="admnbutton">
-<button type="button" onclick="document.location='search.php'">Search Toys</button>  
-<button type="button" onclick="document.location='admin.php'">Admin</button>  
-</div>
+
 <aside id="indexaside">
 <!-- display a list of categories -->
 <h2 id="categories">Categories</h2>

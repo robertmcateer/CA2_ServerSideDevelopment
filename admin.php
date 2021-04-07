@@ -62,10 +62,6 @@ include('includes/header.php');
 </li>
 </ul>
 </nav>  
-<div class ="adminlinks">
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>    
-</div> 
 </aside>
 <section>
 <!-- display a table of records -->
@@ -106,11 +102,11 @@ value="<?php echo $record['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="index.php">Back</a></p>
+
 </section>
 <?php
 include('includes/footer.php');
 ?>
 
 </div>
-
+<div>

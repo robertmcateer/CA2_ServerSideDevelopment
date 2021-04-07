@@ -53,7 +53,7 @@ if (isset($_POST["submit"])) {
 ?>
 
 
-<p><a href="index.php">Back</a></p>
+
 <?php
 include('includes/footer.php');
 ?>
