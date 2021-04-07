@@ -13,6 +13,8 @@
   <a href="index.php">Home</a>
   <a href="search.php">Search Toys</a>
   <a href="contact.php">Contact Us</a>
+  <a href="register.php">Register</a>
+  <a href="login.php">Login</a>
   <div class="dropdown">
   <a href="admin.php">Admin</a>
     <button class="dropbtn">
