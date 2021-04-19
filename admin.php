@@ -1,6 +1,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap" rel="stylesheet">
 <?php
+/**
+ * Start the session.
+ */
+session_start();
+
+/**
+ * Check if the user is logged in.
+ */
+if(!isset($_SESSION['admin_id']) || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+
+
+/**
+ * Print out something that only logged in users can see.
+ */
 require_once('database.php');
 
 // Get category ID

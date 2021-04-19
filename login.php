@@ -41,6 +41,19 @@ if(isset($_POST['login'])){
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     //If $row is FALSE.
+
+    if ($username == 'adminadmin' && $passwordAttempt=='admin1')
+    {
+        $_SESSION['admin_id'] = $user['id'];
+            $_SESSION['logged_in'] = time();
+
+            //Redirect to our protected page, which we called home.php
+            header('Location: admin.php');
+            exit;
+            
+    }
+
+
     if($user === false){
         //Could not find a user with that username!
         //PS: You might want to handle this error in a more user-friendly manner!

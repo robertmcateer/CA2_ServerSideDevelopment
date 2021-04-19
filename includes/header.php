@@ -15,6 +15,7 @@
   <a href="contact.php">Contact Us</a>
   <a href="register.php">Register</a>
   <a href="login.php">Login</a>
+  <a href="logout.php">Logout</a>
   <div class="dropdown">
   <a href="admin.php">Admin</a>
     <button class="dropbtn">
@@ -23,6 +24,7 @@
     <div class="dropdown-content">
       <a href="add_record_form.php">Add Pet</a>
       <a href="category_list.php">Manage Category</a>
+      <a href="display_users.php">Users</a>
       
     </div>
   </div>

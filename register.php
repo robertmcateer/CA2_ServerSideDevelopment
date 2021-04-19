@@ -17,14 +17,23 @@ require 'libary-folder/password.php';
  */
 require 'login_connect.php';
 
+?>
+<div class="container">
+<?php
+include('includes/header.php');
+?>
+
+<?php
 
 //If the POST var "register" exists (our submit button), then we can
 //assume that the user has submitted the registration form.
 if(isset($_POST['register'])){
     
     //Retrieve the field values from our registration form.
+    $name = !empty($_POST['name']) ? trim($_POST['name']) : null;
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
     $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    $dob = !empty($_POST['dob']) ? trim($_POST['dob']) : null;
     
     //TO ADD: Error checking (username characters, password length, etc).
     //Basically, you will need to add your own error checking BEFORE
@@ -58,11 +67,13 @@ if(isset($_POST['register'])){
     
     //Prepare our INSERT statement.
     //Remember: We are inserting a new row into our users table.
-    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $sql = "INSERT INTO users (name,username,dob, password) VALUES (:name,:username, :dob,:password)";
     $stmt = $pdo->prepare($sql);
     
     //Bind our variables.
+    $stmt->bindValue(':name', $name);
     $stmt->bindValue(':username', $username);
+    $stmt->bindValue(':dob', $dob);
     $stmt->bindValue(':password', $passwordHash);
 
     //Execute the statement and insert the new account.
@@ -71,20 +82,21 @@ if(isset($_POST['register'])){
     //If the signup process is successful.
     if($result){
         //What you do here is up to you!
-        echo 'Thank you for registering with our website.';
+        echo 'Thank you for registering with our website. Please login '?><a href="login.php">HERE</a><?php
     }
     
 }
+?>
 
-?>
-<div class="container">
-<?php
-include('includes/header.php');
-?>
+
         <h1>Register</h1>
         <form action="register.php" method="post">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name"><br>
             <label for="username">Username</label>
             <input type="text" id="username" name="username"><br>
+            <label for="dob">Date of Birth</label>
+            <input type="text" id="dob" name="dob"><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password"><br>
             <input type="submit" name="register" value="Register"></button>
