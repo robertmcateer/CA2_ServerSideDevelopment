@@ -90,18 +90,24 @@ if(isset($_POST['register'])){
 
 
         <h1>Register</h1>
+        <div class="contactform1">
         <form action="register.php" method="post">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name"><br>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
-            <label for="dob">Date of Birth</label>
-            <input type="text" id="dob" name="dob"><br>
-            <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <label for="name">Full Name:</label><br>
+            <input type="input" name="name"  id="nameid" placeholder="Enter Full Name" required size="12" onBlur="name_validation();" required><span id="name_err"></span>
+            <br><br>
+            <label for="username" >Username:</label><br>
+            <input type="text" id="username" name="username"  placeholder="Enter Username"><br><br>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="text" id="dob" name="dob" placeholder="Enter DOB"><br><br>
+            <label for="password">Password</label><br>
+
+            <input type="input" name="password"  id="passwordid" placeholder="Enter Strong Password" required size="16" onBlur="password_validation();" required><span id="password_err"></span>
+            <br><br>
             <input type="submit" name="register" value="Register"></button>
         </form>
+</div>
         <?php
 include('includes/footer.php');
 ?>
 <div>
+<script src="validation.js"></script>

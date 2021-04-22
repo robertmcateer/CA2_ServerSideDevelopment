@@ -22,7 +22,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="add_record_form.php">Add Pet</a>
+      <a href="add_record_form.php">Add Item</a>
       <a href="category_list.php">Manage Category</a>
       <a href="display_users.php">Users</a>
       

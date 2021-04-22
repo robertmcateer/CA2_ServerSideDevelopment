@@ -49,6 +49,8 @@ nav ul li {
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
+  padding: 2px;
+  padding-left: 150px;
 }
 
 /* Links inside the navbar */
@@ -281,6 +283,22 @@ h3 {
 .admnbutton {
   margin: 15px;
   float: right;
+}
+
+.contactform1 {
+  margin-left: 50px;
+}
+
+.loginform1 {
+  margin-left: 400px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.searchform1 {
+  margin-top: 20px;
+  margin-left: 150px;
+  margin-bottom: 50px;
 }
 
 /* here is where the sidebar styles start*/

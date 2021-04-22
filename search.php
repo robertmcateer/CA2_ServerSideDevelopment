@@ -2,14 +2,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap" rel="stylesheet">
 <div class="container">
 <?php
+/**
+ * Start the session.
+ */
+session_start();
+
+/**
+ * Check if the user is logged in.
+ */
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+
+
+/**
+ * Print out something that only logged in users can see.
+ */
 include('includes/header.php');
 require_once('database.php');
 ?>
+<div class="searchform1">
 <form method="post">
 <label>Search</label>
 <input type="text" name="search"  id="searchid"  placeholder="Search Toy" required size="12" onBlur="search_validation();">
 <input type="submit" name="submit">	
 </form>
+</div>
 
 <?php
 // search 

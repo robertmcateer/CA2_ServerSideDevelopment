@@ -90,13 +90,15 @@ if(isset($_POST['login'])){
 include('includes/header.php');
 ?>
         <h1>Login</h1>
+        <div class="loginform1">
         <form action="login.php" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username"placeholder="Enter Username"><br><br>
+            <label for="password">Password</label><br>
+            <input type="text" id="password" name="password" placeholder="Enter Password"><br><br>
             <input type="submit" name="login" value="Login">
         </form>
+</div>
         <?php
 include('includes/footer.php');
 ?>

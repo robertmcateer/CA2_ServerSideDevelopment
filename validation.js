@@ -59,6 +59,28 @@ function price_validation(){
         document.getElementById('name_err').style.color = "#00AF33";
         }
         }
+
+        
+   // manufacturer validation
+   function password_validation(){
+    'use strict';
+    var passwordid_name = document.getElementById("passwordid");
+    var passwordid_value = document.getElementById("passwordid").value;
+    var passwordid_length = passwordid_value.length;
+    var letters = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    if(!passwordid_value.match(letters))
+    {
+    document.getElementById('password_err').innerHTML = 'Must Be 8 characters with at least - 1 Captial, 1 Number and Special Character';
+    document.getElementById('password_err').style.color = "#FF0000";
+    passid_name.focus();
+    
+    }
+    else
+    {
+    document.getElementById('password_err').innerHTML = 'Valid';
+    document.getElementById('password_err').style.color = "#00AF33";
+    }
+    }
         
     // function search_validation(){
     //     'use strict';
