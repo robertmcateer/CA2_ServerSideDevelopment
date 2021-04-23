@@ -1,3 +1,4 @@
+
 function price_validation(){
     'use strict';
     var priceid_name = document.getElementById("priceid");
@@ -60,8 +61,7 @@ function price_validation(){
         }
         }
 
-        
-   // manufacturer validation
+    
    function password_validation(){
     'use strict';
     var passwordid_name = document.getElementById("passwordid");
@@ -81,6 +81,7 @@ function price_validation(){
     document.getElementById('password_err').style.color = "#00AF33";
     }
     }
+
         
     // function search_validation(){
     //     'use strict';
